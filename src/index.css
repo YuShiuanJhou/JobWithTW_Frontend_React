@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-=======
->>>>>>> 06f3b8754ca47da94bfa9473d2fd0e28c43e65b6
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

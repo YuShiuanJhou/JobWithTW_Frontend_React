@@ -1,5 +1,4 @@
 const Home = () => {
-<<<<<<< HEAD
 
     const handleClick = () => {
         console.log("hello")
@@ -51,14 +50,4 @@ const Home = () => {
     );
 }
 
-=======
-    return ( 
-        <div className="home">
-            <h2 style={{color:"#239cef",backgroundColor:"#efefef"}}>homepage</h2>
-        </div>
-
-     );
-}
- 
->>>>>>> 06f3b8754ca47da94bfa9473d2fd0e28c43e65b6
 export default Home;

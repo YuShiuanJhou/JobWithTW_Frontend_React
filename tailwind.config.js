@@ -14,8 +14,12 @@ module.exports = {
         'cyan-600': '#0891b2',
         'cyan-700': '#0e7490',
         'cyan-800': '#155e75',
-        'cyan-900': '#164e63'
-      }
+        'cyan-900': '#164e63',
+        'tail-wind':'#22D3EE'
+      },
+      fontFamily: {
+        'billboard': ['Poppins','verdana']
+       }
 
     },
   },
