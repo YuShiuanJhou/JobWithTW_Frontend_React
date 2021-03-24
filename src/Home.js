@@ -1,49 +1,45 @@
+import { useState } from 'react';
+
 const Home = () => {
 
+    const [blogs, setBlogs] = useState([
+        { title: 'title1', body: "body1", author: "author1", id: 1 },
+        { title: 'title2', body: "body2", author: "author2", id: 2 },
+        { title: 'title3', body: "body3", author: "author3", id: 3 }
+    ]);
+    // const [name, setName] = useState("mario");
+    // const [age, setAge] = useState(25);
+
     const handleClick = () => {
-        console.log("hello")
+        console.log(blogs)
+        let newv = { title: 'title1', body: "body1", author: "author1", id: 4 }
+        blogs.push(newv);
+        setBlogs(blogs)
     }
 
-    const handleClickAgain = (name, e) => {
-        console.log("hello" + name, e.target);
-    }
+    // const handleClickAgain = (name, e) => {
+    //     console.log("hello" + name, e.target);
+    // }
 
 
     return (
 
 
 
-        <div className="home">
-            <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-0">
-                <div className="flex-shrink-0">
-                    <img className="h-12 w-12" src="/img/logo.png" alt="ChitChat Logo" />
+        <div className="home inline-flex flex-col">
+            <h2>HomePage</h2>
+            <button onClick={handleClick} className="inline addBtn  rounded-xl	border border-grey-900 bg-black text-white p-2 shadow-xl">
+                Add Blog
+            </button>
+            {blogs.map((blog) => (
+                <div className="max-w-4xl blog-preview flex flex-col  justify-between mx-auto shadow-xl border-2 border-green-500" key={blog.id}>
+                    <h2>{blog.title}</h2>
+                    <p>writen by {blog.author}</p>
                 </div>
-                <div>
-                    <div className="text-xl font-medium text-black">ChitChat</div>
-                    <p className="text-gray-500">You have a new message!</p>
-                </div>
-            </div>
-            <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-10 bg-red-100">
-                <div className="flex-shrink-1">
-                    <img className="h-12 w-12" src="/img/logo.png" alt="ChitChat Logo" />
-                </div>
-                <div>
-                    <div className="text-xl font-medium text-black">ChitChat</div>
-                    <p className="text-gray-500">You have a new message!</p>
-                </div>
-            </div>
-            <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-4">
-                <div className="flex-shrink-5">
-                    <img className="h-12 w-12" src="/img/logo.png" alt="ChitChat Logo" />
-                </div>
-                <div>
-                    <div className="text-xl font-medium text-black">ChitChat</div>
-                    <p className="text-gray-500">You have a new message!</p>
-                </div>
-            </div>
-            <h2 style={{ color: "#239cef", backgroundColor: "#efefef" }}>homepage</h2>
-            <button onClick={handleClick} >Click me</button>
-            <button onClick={(e) => { handleClickAgain('yoshi', e) }}> click me again again</button>
+            ))}
+            {/* <h2 style={{ color: "#000", backgroundColor: "#efefef",textAlign:"center" }}>{name} is {age} yearsold</h2>
+            <button onClick={handleClick} style={{ boder: "1px solid", display:"block" }} >Click me</button>
+            <button onClick={(e) => { handleClickAgain('yoshi', e) }}> click me again again</button> */}
 
         </div>
 
